@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Sound.Tidal.Drum.FrenhhHouse where
+module Sound.Tidal.Drum.FrenchHouse where
 
 import Sound.Tidal.Context
 
@@ -9,4 +9,3 @@ sd = "[~ ~ ~ ~] [t ~ ~ ~] [~ ~ ~ ~] [t ~ ~ ~]" :: Pattern Bool
 hh = "[t t t t] [t t t t] [t t t t] [t t t t]" :: Pattern Bool
 sh = "[t t t ~] [t ~ t t] [t t t t] [t ~ t t]" :: Pattern Bool
 oh = "[t ~ t ~] [t ~ t ~] [t ~ t ~] [t ~ t ~]" :: Pattern Bool
-

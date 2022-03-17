@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Sound.Tidal.Drum.AshleysRoahhClip where
+module Sound.Tidal.Drum.AshleysRoachClip where
 
 import Sound.Tidal.Context
 
@@ -12,5 +12,3 @@ hh = "[t ~ t ~] [t ~ t ~] [t ~ ~ ~] [t ~ t ~] " :: Pattern Bool
 oh = "[~ ~ ~ ~] [~ ~ ~ ~] [~ ~ t ~] [~ ~ ~ ~] " :: Pattern Bool
 lt = "[t ~ t ~] [t ~ t ~] [t ~ t ~] [t ~ t ~] " :: Pattern Bool
 ht = "[~ t ~ t] [~ t ~ t] [~ t ~ t] [~ t ~ t] " :: Pattern Bool
-
-
