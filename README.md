@@ -572,6 +572,31 @@ Original HipHop.hs -> renombrado a hiphop1.hs
 
 Se incluyen los nuevos nombres el All.hs
 
+* También se realizan correciones en las abreviaturas de los instrumentos de acuerdo a la tabla de @ritchse tomada de https://github.com/ritchse/tidal-drum-machines
+
+---
+
+### Drum names abbreviations:
+| Drum                                | Abbreviation |
+|-------------------------------------|--------------|
+| Bass drum, Kick drum                | bd           |
+| Snare drum                          | sd           |
+| Rimshot                             | rim          |
+| Clap                                | cp           |
+| Closed hi-hat                       | hh           |
+| Open hi-hat                         | oh           |
+| Crash                               | cr           |
+| Ride                                | rd           |
+| Shakers (and maracas, cabasas, etc) | sh           |
+| High tom                            | ht           |
+| Medium tom                          | mt           |
+| Low tom                             | lt           |
+| Cowbell                             | cb           |
+| Tambourine                          | tb           |
+| Other percussions                   | perc         |
+| Miscellaneous samples               | misc         |
+| Effects                             | fx           |
+
 *Windows*
 - Probado en windows 11 y windows 10
 
