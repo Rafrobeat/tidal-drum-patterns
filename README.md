@@ -1,3 +1,5 @@
+Esto es una copia del repo orignal de LVm que se puede encontrar en https://github.com/lvm/tidal-drum-patterns
+
 TidalCycles / Haskell modules of Drum patterns
 
 # Requirements
@@ -271,8 +273,8 @@ Sound.Tidal.Drum.GrooveMe
 Sound.Tidal.Drum.HaitianDivorce
 Sound.Tidal.Drum.HalfDrop
 Sound.Tidal.Drum.Haus
-Sound.Tidal.Drum.HipHop
 Sound.Tidal.Drum.Hiphop
+Sound.Tidal.Drum.Hiphop1
 Sound.Tidal.Drum.Hiphop1a
 Sound.Tidal.Drum.Hiphop1b
 Sound.Tidal.Drum.Hiphop1c
@@ -556,6 +558,91 @@ Sound.Tidal.Drum.WeWillRockYou
 Sound.Tidal.Drum.WhenTheLeveeBreaks
 Sound.Tidal.Drum.YaMama
 ```
+
+## Observaciones importantes para la instalación 2022 (tidal 1.7.10).
+
+* esta guía es experimental. Todo lo que se haga en su equipo es bajo su responsabilidad.
+
+* La instalación original de LVM tiene un problema con un nombre repetido, que sólo se diferencia con una mayúscula, en linux no da error. En windows esto no es posible, pues windows no distingue mayúsculas y minísculas en el nombre. Se hace una pequeña corrección cambiando el nombre de 1 archivo.
+
+Los nombres de los .hs eran:
+
+Original hiphop.hs conserva su nombre
+Original HipHop.hs -> renombrado a hiphop1.hs
+
+Se incluyen los nuevos nombres el All.hs
+
+*Windows*
+- Probado en windows 11 y windows 10
+
+- Se deben desinstalar las versiones anteriores de haskell, para que reciba el paquete tidal-drum-patterns
+
+- instalar manualmente haskell con la siguuente linea en powershell:
+
+Set-ExecutionPolicy Bypass -Scope Process -Force;[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;Invoke-Command -ScriptBlock ([ScriptBlock]::Create((Invoke-WebRequest https://www.haskell.org/ghcup/sh/bootstrap-haskell.ps1 -UseBasicParsing))) -ArgumentList $true
+
+
+Esto instala todo en c:\ghcup y c:\cabal  
+
+- Después ejecutar las siguientes lineas en GIT bash
+
+git clone https://github.com/Rafrobeat/tidal-drum-patterns.git \
+&& cd tidal-drum-patterns \
+&& cabal clean \
+&& cabal configure \
+&& cabal build \
+&& cabal install --lib
+
+Al finalizar este proceso y probar tidal no encuentra el paquete de tidalcycles en atom. Se recibe un error en atom "error hidden tidal package". Para solucionar este problema, se debe hacer lo siguiente:
+
+1. Buscar y editar el archivo default en la ruta  C:\Users\[nombre_de_usuario]\AppData\Roaming\ghc\x86_64-mingw32-8.10.7\environments\
+
+* El directorio x86_64-mingw32-8.10.7 dependerá de la versión de haskell que se instale, eso dependerá del script de instalación de haskell. Puede variar de acuerdo a la fecha en que se haga la instalación.
+
+- Este archivo contiene los paquetes instalados con sus respectivos id. Por alguna razón el paquete de tidal no queda en este archivo. Se debe agregar manualmente la linea de tidalcycles encima de la linea del paquete de tidal-drum.
+
+la linea se parece a:
+package-id [id-de-paquete]
+
+- Para saber que id de paquete tengo instalado, voy a la ruta C:\cabal\store\ghc-8.10.7. Aquí encontrará varios folders, buscar el de tidal. en mi caso elinstalado es tidal-1.7.10-7c01ff89a392a81030b6db7aadf690755e2fe125. Entonces, la línea que debo agregar al documento default del paso anterior sería:
+
+package-id tidal-1.7.10-7c01ff89a392a81030b6db7aadf690755e2fe125
+
+* En el caso de encontrar varias instalaciones de tidal, escoja la más reciente.
+
+* El directorio ghc-8.10.7 dependerá de la versión de haskell que se instale, eso dependerá del script de instalación de haskell. Puede variar de acuerdo a la fecha en que se haga la instalación.
+
+
+*Linux*
+
+- Procedimiento probado en manjaro. Manjaro una librerias de haskell dinámicas, por lo tanto para poder instalar tidal-drum-patterns se debe reconfigurar cabal antes de correr la instalación de tidal-drum-patterns de la siguiente forma:
+
+1. Reconfigurar cabal
+
+- Correr en el terminal
+
+sudo nano ~/.cabal/config
+
+- Agregar las siguientes lineas:
+
+library-vanilla: False
+shared: True
+executable-dynamic: True
+ghc-options: -dynamic
+
+- En el caso que exista alguna de las lineas anteriores, reemplazar con estos valores, o descomentar si existen.
+
+2. Ahora si ejecutar en el terminal
+
+git clone https://github.com/Rafrobeat/tidal-drum-patterns.git \
+&& cd tidal-drum-patterns \
+&& cabal clean \
+&& cabal configure \
+&& cabal build \
+&& cabal install --lib
+
+LISTO!
+
 
 ## LICENSE
 
