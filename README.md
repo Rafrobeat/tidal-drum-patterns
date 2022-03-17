@@ -128,6 +128,11 @@ Sound.Tidal.Drum.BritHouse
 Sound.Tidal.Drum.ChaChaCha1a
 Sound.Tidal.Drum.ChaChaCha1b
 Sound.Tidal.Drum.ChaChaCha1c
+Sound.Tidal.Drum.Champeta
+Sound.Tidal.Drum.Champeta1
+Sound.Tidal.Drum.Champeta2
+Sound.Tidal.Drum.Champeta3
+Sound.Tidal.Drum.Champeta4
 Sound.Tidal.Drum.ChugChugChugaLug
 Sound.Tidal.Drum.CissyStrutLong
 Sound.Tidal.Drum.CissyStrutShort
@@ -148,6 +153,8 @@ Sound.Tidal.Drum.ContemporarySnare2b
 Sound.Tidal.Drum.ContemporarySnare3a
 Sound.Tidal.Drum.ContemporarySnare3b
 Sound.Tidal.Drum.CowdBell
+Sound.Tidal.Drum.Cumbia
+Sound.Tidal.Drum.Cumbia1
 Sound.Tidal.Drum.DasModel1a
 Sound.Tidal.Drum.DasModel1b
 Sound.Tidal.Drum.DeepHouse
@@ -494,6 +501,10 @@ Sound.Tidal.Drum.Rolling7d
 Sound.Tidal.Drum.Rolling8
 Sound.Tidal.Drum.Rolling9a
 Sound.Tidal.Drum.Rolling9b
+Sound.Tidal.Drum.SalioElSol1
+Sound.Tidal.Drum.SalioElSol2
+Sound.Tidal.Drum.SalioElSol3
+Sound.Tidal.Drum.SalioElSol4
 Sound.Tidal.Drum.Sally
 Sound.Tidal.Drum.Samba1a
 Sound.Tidal.Drum.Samba1b
