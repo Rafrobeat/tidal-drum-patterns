@@ -8,9 +8,9 @@ bps = 1
 
 ac = "[~ ~ ~ ~] [~ ~ ~ ~] [~ ~ ~ ~] [~ ~ ~ t] " :: Pattern Bool
 bd = "[t ~ ~ ~] [~ ~ ~ ~] [~ ~ ~ ~] [~ ~ ~ ~] " :: Pattern Bool
-ch = "[t ~ t ~] [~ ~ ~ ~] [~ ~ ~ ~] [~ ~ ~ ~] " :: Pattern Bool
+hh = "[t ~ t ~] [~ ~ ~ ~] [~ ~ ~ ~] [~ ~ ~ ~] " :: Pattern Bool
 lt = "[~ ~ ~ ~] [~ ~ ~ ~] [~ ~ ~ ~] [t t t t] " :: Pattern Bool
 mt = "[~ ~ ~ ~] [~ ~ ~ ~] [t t t ~] [~ ~ ~ ~] " :: Pattern Bool
-sn = "[~ ~ ~ ~] [t ~ t t] [~ ~ ~ ~] [~ ~ ~ ~] " :: Pattern Bool
+sd = "[~ ~ ~ ~] [t ~ t t] [~ ~ ~ ~] [~ ~ ~ ~] " :: Pattern Bool
 
 
