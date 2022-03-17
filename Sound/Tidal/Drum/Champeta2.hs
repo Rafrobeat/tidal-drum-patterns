@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Sound.Tidal.Drum.Champeta1 where
+module Sound.Tidal.Drum.Champeta2 where
 
 import Sound.Tidal.Context
 
