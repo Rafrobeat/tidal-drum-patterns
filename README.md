@@ -586,12 +586,14 @@ Esto instala todo en c:\ghcup y c:\cabal
 
 - Después ejecutar las siguientes lineas en GIT bash
 
+```shell
 git clone https://github.com/Rafrobeat/tidal-drum-patterns.git \
 && cd tidal-drum-patterns \
 && cabal clean \
 && cabal configure \
 && cabal build \
 && cabal install --lib
+```
 
 Al finalizar este proceso y probar tidal no encuentra el paquete de tidalcycles en atom. Se recibe un error en atom "error hidden tidal package". Para solucionar este problema, se debe hacer lo siguiente:
 
@@ -628,22 +630,19 @@ sudo nano ~/.cabal/config
 library-vanilla: False \
 shared: True \
 executable-dynamic: True \
-ghc-options: -dynamic \
+ghc-options: -dynamic
 
 - En el caso que exista alguna de las lineas anteriores, reemplazar con estos valores, o descomentar si existen.
 
 2. Ahora si ejecutar en el terminal
 
+```shell
 git clone https://github.com/Rafrobeat/tidal-drum-patterns.git \
 && cd tidal-drum-patterns \
 && cabal clean \
 && cabal configure \
 && cabal build \
 && cabal install --lib
+```
 
 LISTO!
-
-
-## LICENSE
-
-See [LICENSE](LICENSE)
