@@ -223,8 +223,8 @@ library
                        Sound.Tidal.Drum.HaitianDivorce
                        Sound.Tidal.Drum.HalfDrop
                        Sound.Tidal.Drum.Haus
-                       Sound.Tidal.Drum.HipHop
                        Sound.Tidal.Drum.Hiphop
+                       Sound.Tidal.Drum.Hiphop1
                        Sound.Tidal.Drum.Hiphop1a
                        Sound.Tidal.Drum.Hiphop1b
                        Sound.Tidal.Drum.Hiphop1c
