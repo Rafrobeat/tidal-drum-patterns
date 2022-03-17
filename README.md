@@ -62,7 +62,7 @@ This will print a list of exposed modules.
 Sound.Tidal.Drum.All
 ```
 
-A total of 491 Exposed modules
+A total of 504 Exposed modules
 
 ```haskell
 Sound.Tidal.Drum.Afro1a
