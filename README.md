@@ -1,4 +1,4 @@
-Esto es una copia del repo orignal de LVm que se puede encontrar en https://github.com/lvm/tidal-drum-patterns
+Esto es una copia del repo original de LVM que se puede encontrar en https://github.com/lvm/tidal-drum-patterns
 
 TidalCycles / Haskell modules of Drum patterns
 
@@ -615,7 +615,7 @@ package-id tidal-1.7.10-7c01ff89a392a81030b6db7aadf690755e2fe125
 
 *Linux*
 
-- Procedimiento probado en manjaro. Manjaro una librerias de haskell dinámicas, por lo tanto para poder instalar tidal-drum-patterns se debe reconfigurar cabal antes de correr la instalación de tidal-drum-patterns de la siguiente forma:
+- Procedimiento probado en manjaro. Manjaro usa librerias de haskell dinámicas, por lo tanto para poder instalar tidal-drum-patterns se debe reconfigurar cabal antes de correr la instalación de tidal-drum-patterns de la siguiente forma:
 
 1. Reconfigurar cabal
 
@@ -625,10 +625,10 @@ sudo nano ~/.cabal/config
 
 - Agregar las siguientes lineas:
 
-library-vanilla: False
-shared: True
-executable-dynamic: True
-ghc-options: -dynamic
+library-vanilla: False \
+shared: True \
+executable-dynamic: True \
+ghc-options: -dynamic \
 
 - En el caso que exista alguna de las lineas anteriores, reemplazar con estos valores, o descomentar si existen.
 
