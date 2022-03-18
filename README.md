@@ -681,4 +681,15 @@ git clone https://github.com/Rafrobeat/tidal-drum-patterns.git \
 && cabal install --lib
 ```
 
+* Si se encuentran problemas al reinstalar la libreria tdal-drum-patterns, se debe remover la instalación anterior de tidal y correr en terminal las siguientes lineas:
+
+```shell
+git clone https://github.com/Rafrobeat/tidal-drum-patterns.git \
+&& cd tidal-drum-patterns \
+&& cabal v1-clean \
+&& cabal v1-configure \
+&& cabal v1-build \
+&& cabal v1-install --lib
+```
+
 LISTO!
