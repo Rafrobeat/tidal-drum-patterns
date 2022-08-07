@@ -692,4 +692,26 @@ git clone https://github.com/Rafrobeat/tidal-drum-patterns.git \
 && cabal v1-install
 ```
 
+//////////// UPDATE 07.08.2022 /////////////////
+
+En linux, apareció un nuevo error con las nuevas versiones de cabal que instala por defecto la verrsión 1.8.0 de tidalcycles.
+
+Al finalizar el proceso de instalación y probar tidal no encuentra el paquete de tidalcycles en atom. Se recibe un error en atom "error hidden tidal package". Para solucionar este problema, se debe hacer lo siguiente:
+
+1. Buscar y editar el archivo default en la ruta  /home/[usuario]/.ghc/x86_64-linux-9.0.2/environments/default
+
+* El directorio x86_64-linux-9.0.2 dependerá de la versión de ghc que se instale, eso dependerá del script de instalación de haskell. Puede variar de acuerdo a la fecha en que se haga la instalación.
+
+- Este archivo contiene los paquetes instalados con sus respectivos id. Por alguna razón el paquete de tidal no queda en este archivo. Se debe agregar manualmente la linea de tidalcycles encima de la linea del paquete de tidal-drum.
+
+la linea se parece a:
+package-id [id-de-paquete]
+
+- Para saber que id de paquete tengo instalado, voy a la ruta /home/[usuario]/.cabal/store/ghc-9.0.2. Aquí encontrará varios folders, buscar el de tidal. en mi caso el paquete instalado es tidal-1.8.0-6b74b9d6ac387a344eb4d307175cc13d65479033c0d364604bbf5ca5055d0d32. Entonces, la línea que debo agregar al documento default del paso anterior sería:
+
+package-id tidal-1.8.0-6b74b9d6ac387a344eb4d307175cc13d65479033c0d364604bbf5ca5055d0d32
+
+* En el caso de encontrar varias instalaciones de tidal, escoja la más reciente, sino se hace esto, atom generará otro problema al no saber como resolver el pattern.
+
+/////////////////////////////////////////
 LISTO!
