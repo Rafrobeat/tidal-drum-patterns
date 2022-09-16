@@ -753,6 +753,22 @@ LINUX
 cabal update
 cabal v1-install tidal
 
+** en algunos casos, tuve que ejecutar
+    
+git clone https://github.com/Rafrobeat/tidal-drum-patterns.git \
+&& cd tidal-drum-patterns \
+&& cabal clean \
+&& cabal configure \
+&& cabal build \
+&& cabal install --lib
+
+pero antes tuve que unregister los tidal anteriores.
+    
+ghc-pkg list tidal
+    
+ghc-pkg unregister "los paquetes rotos o versiones anteriores de tidal"
+    
+    
 Al finalizar el proceso de instalación y probar tidal trabaja con el paquete de tidalcycles anterior. 
 
 Buscar y editar el archivo default en la ruta /home/[usuario]/.ghc/x86_64-linux-9.0.2/environments/default
