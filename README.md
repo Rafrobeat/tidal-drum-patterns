@@ -732,8 +732,9 @@ remove ghc version
 
 ghcup rm ghc-8.10.7
 
-cabal upgrade
-ghcup install cabal 3.8.1.0
+* choco install ghc
+    
+ghcup install cabal 3.8.1.0 (upgrade cabal)
 
 * Como tenia cabal instalado, tuve que renombrar el dirctorio c:\cabal a c:\cabal_ para poder hacer el cabal update. Sino tiraba error. 
     
