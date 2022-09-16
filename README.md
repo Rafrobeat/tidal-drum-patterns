@@ -574,7 +574,7 @@ Sound.Tidal.Drum.YaMama
 
 * esta guía es experimental. Todo lo que se haga en su equipo es bajo su responsabilidad.
 
-* La instalación original de LVM tiene un problema con un nombre repetido, que sólo se diferencia con una mayúscula, en linux no da error. En windows esto no es posible, pues windows no distingue mayúsculas y minísculas en el nombre. Se hace una pequeña corrección cambiando el nombre de 1 archivo.
+* La instalación original de LVM tiene un problema con un nombre repetido, que sólo se diferencia con una mayúscula, en linux no da error. En windows esto no es posible, pues windows no distingue mayúsculas y minusculas en el nombre. Se hace una pequeña corrección cambiando el nombre de 1 archivo.
 
 Los nombres de los .hs eran:
 
@@ -713,5 +713,57 @@ package-id tidal-1.8.0-6b74b9d6ac387a344eb4d307175cc13d65479033c0d364604bbf5ca50
 
 * En el caso de encontrar varias instalaciones de tidal, escoja la más reciente, sino se hace esto, atom generará otro problema al no saber como resolver el pattern.
 
-/////////////////////////////////////////
-LISTO!
+
+//////////// UPDATE 16.09.2022 /////////////////
+Tidal drums con tidal 1.9.2
+
+WINDOWS
+** Es necesario subir a GHC 9.4.2
+
+Set-ExecutionPolicy Bypass -Scope Process -Force;[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;Invoke-Command -ScriptBlock ([ScriptBlock]::Create((Invoke-WebRequest https://www.haskell.org/ghcup/sh/bootstrap-haskell.ps1 -UseBasicParsing))) -ArgumentList $true
+
+
+ghcup list
+ghcup install <tool> <version>
+ 
+ghcup install ghc 9.4.2
+
+remove ghc version
+
+ghcup rm ghc-8.10.7
+
+cabal upgrade
+ghcup install cabal 3.8.1.0
+
+* Como tenia cabal instalado, tuve que renombrar el dirctorio c:\cabal a c:\cabal_ para poder hacer el cabal update. Sino tiraba error. 
+    
+cabal update
+cabal v1-install tidal
+
+git clone https://github.com/Rafrobeat/tidal-drum-patterns.git \
+&& cd tidal-drum-patterns \
+&& cabal v1-clean \
+&& cabal v1-configure \
+&& cabal v1-build \
+&& cabal v1-install
+
+LINUX
+
+cabal update
+cabal v1-install tidal
+
+Al finalizar el proceso de instalación y probar tidal trabaja con el paquete de tidalcycles anterior. 
+
+Buscar y editar el archivo default en la ruta /home/[usuario]/.ghc/x86_64-linux-9.0.2/environments/default
+El directorio x86_64-linux-9.0.2 dependerá de la versión de ghc que se instale, eso dependerá del script de instalación de haskell. Puede variar de acuerdo a la fecha en que se haga la instalación.
+Este archivo contiene los paquetes instalados con sus respectivos id. Por alguna razón el paquete de tidal no queda en este archivo. Se debe agregar manualmente la linea de tidalcycles encima de la linea del paquete de tidal-drum.
+la linea se parece a: package-id [id-de-paquete]
+
+Para saber que id de paquete tengo instalado, voy a la ruta /home/[usuario]/.cabal/store/ghc-9.0.2. Aquí encontrará varios folders, buscar el de tidal. en mi caso el paquete instalado es tidal-1.9.2-6b74b9d6ac387a344eb4d307175cc13d65479033c0d364604bbf5ca5055d0d32. Entonces, la línea que debo agregar al documento default del paso anterior sería:
+package-id tidal-1.9.2-6b74b9d6ac387a344eb4d307175cc13d65479033c0d364604bbf5ca5055d0d32
+
+También agregar el nuevo paquete tidal-link.
+
+En el caso de encontrar varias instalaciones de tidal, escoja la más reciente, sino se hace esto, atom generará otro problema al no saber como resolver el pattern.
+
+///////////////////////////////////////// LISTO! ///////////////////////
