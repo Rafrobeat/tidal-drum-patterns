@@ -783,4 +783,20 @@ También agregar el nuevo paquete tidal-link.
 
 En el caso de encontrar varias instalaciones de tidal, escoja la más reciente, sino se hace esto, atom generará otro problema al no saber como resolver el pattern.
 
+//////////// UPDATE 19.12.2023 /////////////////
+
+Tidal drums con tidal 1.9.4
+
+LINUX
+
+1. cabal update
+2. Remover todas las lib de .ghc y .cabal. Con cabal v1 no busca un enviroment.
+
+git clone https://github.com/Rafrobeat/tidal-drum-patterns.git \
+&& cd tidal-drum-patterns \
+&& cabal v1-clean \
+&& cabal v1-configure \
+&& cabal v1-build \
+&& cabal v1-install
+
 ///////////////////////////////////////// LISTO! ///////////////////////
